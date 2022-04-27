@@ -1,0 +1,30 @@
+- Medios de prensa 
+Nombre, (String), "La Estrella Antofagasta"
+Fecha de creacion, (Date), 1960-05-14
+URL, (String), "www.laestrellaantofagasta.cl"
+Codigo Region, (Int), 2
+Región, (String), "Antofagasta"
+Pais, (String), "Chile"
+Idioma principal, (String), "Español"
+
+
+- Dueños de medio 
+Nombre, (String), "Jaime 4K Gonzalez"
+Tipo de Dueño, (Char), 'P'
+Fecha de adquisicion, (Date), 2022-04-27
+
+
+- Noticias 
+URL, (String), "www.latercera.cl"
+Titulo, (String), "Elon musk compra el 10k"
+Fecha de publicación, (Date), 2022-04-27
+Contenido Textual, (String), "..."
+
+
+- Menciones 
+Nombre, (String), "Luis Llanca"
+Tiene Pagina Wikipedia, (Booleano), F
+Profesión, (String), "Estudiante Informatica UACH"
+Fecha de Nacimiento, (Date), 2000-12-30
+Nacionalidad, (String), "chileno"
+Popularidad, (Int), 10000
