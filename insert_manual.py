@@ -29,12 +29,12 @@ cursor.execute(
      VALUES ('Nananana', 'www.holamundo.cl/nananana', CURRENT_TIMESTAMP, 'akaajkjajajajaja', 3) \
      ")
 cursor.execute(
-    "INSERT INTO personas (nombreMencion, tienePaginaWikipedia, nacionalidad, profesion, fechaNacimiento, id_popularidad)\
-     VALUES ('Qwerty Uiop', TRUE, 'chilena', 'Medico', CURRENT_TIMESTAMP, 1) \
+    "INSERT INTO personas (nombreMencion, tienePaginaWikipedia, nacionalidad, profesion, fechaNacimiento)\
+     VALUES ('Qwerty Uiop', TRUE, 'chilena', 'Medico', CURRENT_TIMESTAMP) \
      ")
 cursor.execute(
-    "INSERT INTO popularidad (fecha, cantidadVisitas)\
-     VALUES (CURRENT_TIMESTAMP, 15) \
+    "INSERT INTO popularidad (fecha, cantidadVisitas, id_persona)\
+     VALUES (CURRENT_TIMESTAMP, 15, 1) \
      ")
 
 cursor.execute(

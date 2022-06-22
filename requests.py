@@ -35,10 +35,10 @@ cursor.execute(
 for row in cursor: print(row)
 
 # c)
-# cursor.execute(
-
-# )
-# for row in cursor: print(row)
+cursor.execute(
+    "SELECT fecha, cantidadVisitas FROM popularidad WHERE id_persona=1"
+)
+for row in cursor: print(row)
 
 # # d)
 # cursor.execute(
