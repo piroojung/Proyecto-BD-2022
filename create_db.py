@@ -27,52 +27,65 @@ except mariadb.ProgrammingError:
 # Usar base de datos 
 cursor.execute("USE model")
 
+cursor.execute("DROP TABLE duenos")
+cursor.execute("DROP TABLE medios")
+cursor.execute("DROP TABLE noticias")
+cursor.execute("DROP TABLE personas")
+cursor.execute("DROP TABLE popularidad")
+cursor.execute("DROP TABLE poseer")
+cursor.execute("DROP TABLE menciones")
+
 # Crear tablas
 cursor.execute(
     """CREATE TABLE IF NOT EXISTS duenos(
-       id_dueno INT, 
+       id_dueno INT NOT NULL AUTO_INCREMENT, 
        nombreDueno VARCHAR(50), 
-       tipoDueno CHAR BYTE
+       tipoDueno CHAR BYTE,
+       PRIMARY KEY(id_dueno)
     )""")
 
 cursor.execute(
     """CREATE TABLE IF NOT EXISTS medios(
-        id_medio INT, 
+        id_medio INT NOT NULL AUTO_INCREMENT, 
         nombrePrensa VARCHAR(50), 
-        idiomaPrincipal CHAR BYTE,
+        idiomaPrincipal VARCHAR(20),
         fechaCreacion DATE,
         urlPrensa VARCHAR(100),
         codigoRegion INT,
         pais VARCHAR(15),
         region VARCHAR(30),
-        id_noticia INT
+        PRIMARY KEY(id_medio)
     )""")
 
 cursor.execute(
     """CREATE TABLE IF NOT EXISTS noticias(
-        id_noticia INT, 
+        id_noticia INT NOT NULL AUTO_INCREMENT, 
         tituloNoticia VARCHAR(50), 
         urlNoticia VARCHAR(100),
         fechaPublicacion DATE,
-        contenidoTextual VARCHAR(5000)
+        contenidoTextual TEXT,
+        id_medio INT,
+        PRIMARY KEY(id_noticia)
     )""")
 
 cursor.execute(
     """CREATE TABLE IF NOT EXISTS personas(
-        id_persona INT, 
+        id_persona INT NOT NULL AUTO_INCREMENT, 
         nombreMencion VARCHAR(50), 
         tienePaginaWikipedia BOOLEAN,
         nacionalidad VARCHAR(20),
         profesion VARCHAR(50),
         fechaNacimiento DATE,
-        id_popularidad INT
+        PRIMARY KEY(id_persona)
     )""")
 
 cursor.execute(
     """CREATE TABLE IF NOT EXISTS popularidad(
-       id_popularidad INT, 
+       id_popularidad INT NOT NULL AUTO_INCREMENT, 
        fecha DATE,
-       cantidadVisitas INT
+       cantidadVisitas INT,
+       id_persona INT,
+       PRIMARY KEY(id_popularidad)
     )""")
 
 cursor.execute(

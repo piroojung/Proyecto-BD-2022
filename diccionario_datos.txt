@@ -4,7 +4,7 @@ Fecha de creacion, (Date), 1960-05-14
 URL, (String), "www.laestrellaantofagasta.cl"
 Codigo Region, (Int), 2
 Región, (String), "Antofagasta"
-Pais, (String), "Chile"
+Pais, (String), "Chile" 
 Idioma principal, (String), "Español"
 
 

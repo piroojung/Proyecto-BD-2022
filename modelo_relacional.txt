@@ -1,0 +1,7 @@
+Dueños(PK:ID_Dueño,NombreDueño,TipoDueño)
+Medios(PK:ID_Medio, NombrePrensa, IdiomaPrincipal, FechaCreacion, URLPrensa, CodigoRegion, Pais, Region)
+Noticias(PK: ID_Noticia, TituloNoticia, URLNoticia, FechaPublicacion, ContenidoTextual, #ID_Medio)
+Personas(PK: ID_Persona, NombreMencion, TienePaginaWikipedia, Nacionalidad, Profesion, FechaNacimiento)
+Popularidad(ID_Popularidad, Fecha, CantidadVisitas, #ID_Persona)
+Poseer(PK: #ID_Dueño, PK: #ID_Medio, FechaVenta, FechaAdquisicion)
+Menciones(PK: #ID_Noticia, PK: #ID_Persona)
