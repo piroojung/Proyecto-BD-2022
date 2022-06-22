@@ -1,8 +1,8 @@
 import mariadb
 import sys
 
-USER = "cris"
-PASSWORD = "cris"
+USER = "dui"
+PASSWORD = "benja123"
 
 try: 
     connection = mariadb.connect(
@@ -30,7 +30,7 @@ for row in cursor: print(row)
 cursor.execute(
     "SELECT nombreMencion, tituloNoticia FROM personas JOIN menciones \
     ON personas.id_persona = menciones.id_persona JOIN noticias ON \
-    menciones.id_noticia = noticias.id_noticia WHERE noticias.fechaPublicacion = '2022-06-19'"
+    menciones.id_noticia = noticias.id_noticia WHERE noticias.fechaPublicacion = '2022-06-22'"
 )
 for row in cursor: print(row)
 
@@ -41,7 +41,7 @@ for row in cursor: print(row)
 # for row in cursor: print(row)
 
 # # d)
-# cursor.execute(
-
-# )
-# for row in cursor: print(row)
+cursor.execute(
+     "select * from medios where codigoRegion = 14 order by fechaCreacion asc limit 5;"
+)
+for row in cursor: print(row)
