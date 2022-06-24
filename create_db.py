@@ -1,8 +1,8 @@
 import mariadb
 import sys
 
-USER = "cris"
-PASSWORD = "cris"
+USER = "dui"
+PASSWORD = "benja123"
 
 try:
     connection = mariadb.connect(
@@ -26,15 +26,15 @@ except mariadb.ProgrammingError:
 
 # Usar base de datos 
 cursor.execute("USE model")
-
-cursor.execute("DROP TABLE duenos")
-cursor.execute("DROP TABLE medios")
-cursor.execute("DROP TABLE noticias")
-cursor.execute("DROP TABLE personas")
-cursor.execute("DROP TABLE popularidad")
-cursor.execute("DROP TABLE poseer")
-cursor.execute("DROP TABLE menciones")
-
+try:
+    cursor.execute("DROP TABLE duenos")
+    cursor.execute("DROP TABLE medios")
+    cursor.execute("DROP TABLE noticias")
+    cursor.execute("DROP TABLE personas")
+    cursor.execute("DROP TABLE popularidad")
+    cursor.execute("DROP TABLE poseer")
+    cursor.execute("DROP TABLE menciones")
+except: pass
 # Crear tablas
 cursor.execute(
     """CREATE TABLE IF NOT EXISTS duenos(

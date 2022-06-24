@@ -1,8 +1,8 @@
 import mariadb
 import sys
 
-USER = "cris"
-PASSWORD = "cris"
+USER = "dui"
+PASSWORD = "benja123"
 
 try: 
     connection = mariadb.connect(
@@ -22,11 +22,11 @@ cursor = connection.cursor()
 cursor.execute("INSERT INTO duenos (nombreDueno, tipoDueno) VALUES ('Asdasda', 'N')")
 cursor.execute(
     "INSERT INTO medios (nombrePrensa, idiomaPrincipal, fechaCreacion, urlPrensa, codigoRegion, pais, region)\
-     VALUES ('Hola mundo', 'Español', CURRENT_TIMESTAMP, 'www.holamundo.cl', 14, 'Chile', 'XIV') \
+     VALUES ('Hola mundo', 'Español', '1995-06-22', 'www.holamundo.cl', 14, 'Chile', 'XIV') \
      ")
 cursor.execute(
     "INSERT INTO noticias (tituloNoticia, urlNoticia, fechaPublicacion, contenidoTextual, id_medio)\
-     VALUES ('Nananana', 'www.holamundo.cl/nananana', CURRENT_TIMESTAMP, 'akaajkjajajajaja', 3) \
+     VALUES ('Nananana', 'www.holamundo.cl/nananana', '1995-06-22', 'akaajkjajajajaja', 3) \
      ")
 cursor.execute(
     "INSERT INTO personas (nombreMencion, tienePaginaWikipedia, nacionalidad, profesion, fechaNacimiento)\
