@@ -2,7 +2,7 @@ import os
 
 USER = "cris"
 
-print(f"Creando copia dump con usuario {USER}...")
+print(f"Creando copia dump con usuario \"{USER}\"...")
 
 ans = os.system(f"mysqldump -u {USER} -p model > model_dump.sql")
 
