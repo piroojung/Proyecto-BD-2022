@@ -1,8 +1,8 @@
 import mariadb
 import sys
 
-USER = "dui"
-PASSWORD = "benja123"
+USER = "cris"
+PASSWORD = "cris"
 
 try: 
     connection = mariadb.connect(

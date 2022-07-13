@@ -1,8 +1,10 @@
 import mariadb
 import sys
 
-USER = "dui"
-PASSWORD = "benja123"
+PRINT = __name__ == "__main__"
+
+USER = "cris"
+PASSWORD = "cris"
 
 try:
     connection = mariadb.connect(
@@ -22,7 +24,7 @@ cursor = connection.cursor()
 try:
     cursor.execute("CREATE DATABASE model")
 except mariadb.ProgrammingError:
-    print("Base de datos ya creada...")
+    if PRINT: print("Base de datos ya creada...")
 
 # Usar base de datos 
 cursor.execute("USE model")
@@ -60,8 +62,8 @@ cursor.execute(
 cursor.execute(
     """CREATE TABLE IF NOT EXISTS noticias(
         id_noticia INT NOT NULL AUTO_INCREMENT, 
-        tituloNoticia VARCHAR(50), 
-        urlNoticia VARCHAR(100),
+        tituloNoticia TEXT, 
+        urlNoticia TEXT,
         fechaPublicacion DATE,
         contenidoTextual TEXT,
         id_medio INT,
@@ -103,8 +105,9 @@ cursor.execute(
     )""")
 
 
-cursor.execute("SHOW TABLES")
-for row in cursor:
-    print(row)
+if PRINT:
+    cursor.execute("SHOW TABLES")
+    for row in cursor:
+        print(row)
 
 
